@@ -93,8 +93,39 @@ def delete_task(filename='task_saved.json'):
     task_saved.close()
 
 def inbetween():
-    task_saved = open ('task_savd.json', 'r+')
+    task_saved = open('task_saved.json', 'r+')
     saved = json.load(task_saved)
+    tasks = saved['activity']
+    print(saved)
+    print(tasks)
+    task_save= tasks[0]
+    print(task_save)
+
+    print("enter positions you want to be switched")
+    a = input("Enter a")
+    b = input("Enter b")
+    a1=int(a) -1
+    b1=int(b) -1
+
+    
+    tempf = tasks[a1]
+    temps = tasks[b1]
+    print(tasks[a1])
+    
+    """temp = word1
+    word1 = word2
+    word2 = temp"""
+
+    temp = tempf.get(a)
+    tempf[a]=temps.get(b)
+    temps[b]=temp
+    print(tempf)
+    
+    
+
+    task_saved.seek(0)
+    json.dump(saved, task_saved, indent=4)
+    task_saved.close()
 
      
 

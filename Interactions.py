@@ -1,4 +1,3 @@
-import itertools
 import json
 
 
@@ -35,7 +34,6 @@ def add_task(filename='task_saved.json'):
     task_saved.close()
 
     
-
 def read_task(filename='task_saved.json'):
     task_saved = open(filename,'r') # _io.TextIOWrapper
     saved = json.load(task_saved)   # dict
@@ -107,7 +105,6 @@ def inbetween():
     a1=int(a) -1
     b1=int(b) -1
 
-    
     tempf = tasks[a1]
     temps = tasks[b1]
     print(tasks[a1])
@@ -121,8 +118,6 @@ def inbetween():
     temps[b]=temp
     print(tempf)
     
-    
-
     task_saved.seek(0)
     json.dump(saved, task_saved, indent=4)
     task_saved.close()

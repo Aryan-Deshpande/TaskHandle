@@ -67,7 +67,7 @@ def delete_task(filename='task_saved.json'):
 
         if temp_key == task_delete:
             tasks.remove(temp_dict)
-            #print("removing")
+            print("removing.... ")
             #print(tasks) 
             break
 
